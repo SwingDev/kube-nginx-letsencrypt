@@ -14,7 +14,7 @@ PID=$!
 certbot certonly --webroot -w $HOME -n --agree-tos --email ${EMAIL} --no-self-upgrade -d ${DOMAINS}
 kill $PID
 
-CERTPATH=/etc/letsencrypt/live/$(echo $DOMAINS | cut -f1 -d',')
+CERTPATH=/etc/letsencrypt/live/$(echo $DOMAINS | cut -f1 -d' ')
 
 ls $CERTPATH || exit 1
 
